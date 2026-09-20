@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scam Shield — pitch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Outfit:wght@400;650&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #071019;
+        --mint: #3ee0c2;
+        --paper: #f4f1ea;
+        --muted: #b7c2cc;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        background: #05090e;
+        color: var(--paper);
+        font-family: Outfit, sans-serif;
+      }
+      .deck {
+        min-height: 100vh;
+      }
+      section {
+        min-height: 100vh;
+        padding: 8vh 10vw;
+        border-bottom: 1px solid rgba(244, 241, 234, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: radial-gradient(900px 420px at 100% 0%, rgba(62, 224, 194, 0.12), transparent 50%),
+          var(--ink);
+      }
+      .eyebrow {
+        color: var(--mint);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+      h1,
+      h2 {
+        font-family: Fraunces, Georgia, serif;
+        font-weight: 560;
+        line-height: 1.12;
+        margin: 10px 0 16px;
+      }
+      h1 {
+        font-size: clamp(2.4rem, 6vw, 4.4rem);
+      }
+      h2 {
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+      }
+      p,
+      li {
+        font-size: 1.25rem;
+        color: var(--muted);
+        max-width: 22em;
+      }
+      ul {
+        padding-left: 1.1em;
+      }
+      b {
+        color: var(--paper);
+      }
+      .hint {
+        position: fixed;
+        right: 18px;
+        bottom: 14px;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="hint">Scroll · HACKDAY 1.0</p>
+    <main class="deck">
+      <section>
+        <p class="eyebrow">HACKDAY 1.0 · Tech for a better tomorrow</p>
+        <h1>Scam Shield</h1>
+        <p>An AI scam checker that explains itself, in your language.</p>
+      </section>
+      <section>
+        <p class="eyebrow">01 · Problem</p>
+        <h2>Victims understand the scam after the money is gone.</h2>
+        <p>
+          Fake KYC, digital-arrest calls, parcel fees, job offers, UPI collect requests. Filters fail silently. Almost
+          none explain the danger in Hindi, Tamil, or the language a parent actually reads.
+        </p>
+      </section>
+      <section>
+        <p class="eyebrow">02 · Solution</p>
+        <h2>Check before you tap, pay, or share an OTP.</h2>
+        <ul>
+          <li>Paste a message, screenshot, link, or number</li>
+          <li>Verdict + confidence in seconds</li>
+          <li>Red flags highlighted in the original text</li>
+          <li>Audio explanation + next steps</li>
+        </ul>
+      </section>
+      <section>
+        <p class="eyebrow">03 · Hybrid engine</p>
+        <h2>Rules first. AI second. Scores on screen.</h2>
+        <p>
+          Lookalike domains, shorteners, punycode, urgency, OTP, AnyDesk. Then an LLM reasons only on
+          <b>masked</b> text. Judges see <b>rules: 78 · AI: 90</b> — not a wrapped chatbot.
+        </p>
+      </section>
+      <section>
+        <p class="eyebrow">04 · Family Shield</p>
+        <h2>Protection you can forward to your parents.</h2>
+        <p>
+          One tap builds a warning card and WhatsApp text in their language. The viral loop is care, not clicks.
+        </p>
+      </section>
+      <section>
+        <p class="eyebrow">05 · After the damage</p>
+        <h2>“I already clicked or paid.”</h2>
+        <p>
+          First-hour checklist: freeze with the bank, rotate PINs, report. India defaults to <b>1930</b> and
+          <b>cybercrime.gov.in</b>. Helplines are configurable by country. Phones and OTPs never leave the browser
+          unmasked.
+        </p>
+      </section>
+      <section>
+        <p class="eyebrow">06 · Impact</p>
+        <h2>Any phone. No install. A habit of checking first.</h2>
+        <p>
+          Built for first-time internet users, elders, and students. Next: a WhatsApp bot, more languages, and
+          telecom feeds. Until then — check before you pay.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
