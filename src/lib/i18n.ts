@@ -23,23 +23,23 @@ export const LANGUAGES: LangMeta[] = [
 const UI: Record<string, Partial<Record<LanguageCode, string>>> = {
   brand: { en: 'Scam Shield', hi: 'स्कैम शील्ड', ta: 'ஸ்காம் ஷீல்டு' },
   tagline: {
-    en: 'An AI scam checker that explains itself, in your language.',
-    hi: 'एक एआई स्कैम जाँच जो आपकी भाषा में समझाती है।',
-    ta: 'உங்கள் மொழியில் விளக்கும் AI மோசடி சோதனை.',
+    en: 'Is this a scam?',
+    hi: 'क्या यह स्कैम है?',
+    ta: 'இது மோசடியா?',
   },
   checkBefore: {
-    en: 'Check before you tap, pay, or share an OTP.',
-    hi: 'टैप, पेमेंट या OTP शेयर करने से पहले जाँचें।',
-    ta: 'தட்டுவதற்கு, பணம் செலுத்துவதற்கு அல்லது OTP பகிர்வதற்கு முன் சரிபாருங்கள்.',
+    en: 'Paste a message, screenshot, link, or phone number. Scan. Green flag = safe. Red flag = danger.',
+    hi: 'संदेश, स्क्रीनशॉट, लिंक या फ़ोन नंबर डालें। स्कैन करें। हरा = सुरक्षित। लाल = खतरा।',
+    ta: 'செய்தி, ஸ்கிரீன்ஷாட், இணைப்பு அல்லது எண்ணை இடுங்கள். பச்சை = பாதுகாப்பு. சிவப்பு = ஆபத்து.',
   },
   paste: { en: 'Message', hi: 'संदेश', ta: 'செய்தி' },
   screenshot: { en: 'Screenshot', hi: 'स्क्रीनशॉट', ta: 'ஸ்கிரீன்ஷாட்' },
   link: { en: 'Link', hi: 'लिंक', ta: 'இணைப்பு' },
   phone: { en: 'Phone', hi: 'फ़ोन', ta: 'தொலைபேசி' },
   placeholderMessage: {
-    en: 'Paste the SMS, WhatsApp text, email, or call script here…',
-    hi: 'SMS, व्हाट्सऐप, ईमेल या कॉल की बात यहाँ चिपकाएँ…',
-    ta: 'SMS, வாட்ஸ்அப், மின்னஞ்சல் அல்லது அழைப்பு உரையை இங்கே ஒட்டவும்…',
+    en: 'Paste the SMS or WhatsApp message here…',
+    hi: 'SMS या व्हाट्सऐप संदेश यहाँ चिपकाएँ…',
+    ta: 'SMS அல்லது வாட்ஸ்அப் செய்தியை இங்கே ஒட்டவும்…',
   },
   placeholderLink: {
     en: 'https://…',
@@ -56,33 +56,33 @@ const UI: Record<string, Partial<Record<LanguageCode, string>>> = {
   analyzing: { en: 'Scanning…', hi: 'जाँच हो रही है…', ta: 'சரிபார்க்கிறது…' },
   samples: { en: 'Try a sample', hi: 'नमूना आज़माएँ', ta: 'மாதிரியை முயற்சிக்கவும்' },
   privacyNote: {
-    en: 'Phone numbers and OTPs are masked in this browser before anything is sent to the AI.',
-    hi: 'फ़ोन नंबर और OTP ब्राउज़र में ही छिपाए जाते हैं, AI को भेजने से पहले।',
-    ta: 'தொலைபேசி எண்களும் OTP-களும் AI-க்கு அனுப்புவதற்கு முன் இந்த உலாவியிலேயே மறைக்கப்படும்.',
+    en: 'Nothing is sent to a WhatsApp group until you tap Share.',
+    hi: 'शेयर दबाने तक कुछ भी व्हाट्सऐप ग्रुप में नहीं जाता।',
+    ta: 'பகிர் என அழுத்தும் வரை வாட்ஸ்அப் குழுவுக்கு எதுவும் செல்லாது.',
   },
-  emergency: { en: 'I already clicked or paid', hi: 'मैंने पहले ही क्लिक/पेमेंट कर दी', ta: 'ஏற்கனவே கிளிக் / பணம் செலுத்திவிட்டேன்' },
-  back: { en: 'Back to checker', hi: 'जाँच पर वापस', ta: 'சரிபார்ப்புக்கு திரும்பு' },
-  verdict: { en: 'Verdict', hi: 'फैसला', ta: 'முடிவு' },
-  scam: { en: 'Scam', hi: 'स्कैम', ta: 'மோசடி' },
-  suspicious: { en: 'Suspicious', hi: 'संदिग्ध', ta: 'சந்தேகத்திற்குரியது' },
-  safe: { en: 'Likely safe', hi: 'संभवतः सुरक्षित', ta: 'பாதுகாப்பாக இருக்கலாம்' },
+  emergency: { en: 'Already paid?', hi: 'पेमेंट हो गई?', ta: 'பணம் செலுத்திவிட்டீரா?' },
+  back: { en: 'Back', hi: 'वापस', ta: 'திரும்பு' },
+  verdict: { en: 'Result', hi: 'नतीजा', ta: 'முடிவு' },
+  scam: { en: 'Red flag — scam', hi: 'लाल झंडा — स्कैम', ta: 'சிவப்புக் கொடி — மோசடி' },
+  suspicious: { en: 'Yellow flag — be careful', hi: 'पीला झंडा — सावधान', ta: 'மஞ்சள் கொடி — கவனம்' },
+  safe: { en: 'Green flag — safe', hi: 'हरा झंडा — सुरक्षित', ta: 'பச்சைக் கொடி — பாதுகாப்பு' },
   confidence: { en: 'confidence', hi: 'विश्वास', ta: 'நம்பகத்தன்மை' },
   rules: { en: 'Rules', hi: 'नियम', ta: 'விதிகள்' },
   ai: { en: 'AI', hi: 'एआई', ta: 'AI' },
-  why: { en: 'Why this rating', hi: 'यह रेटिंग क्यों', ta: 'இந்த மதிப்பீடு ஏன்' },
-  flags: { en: 'Red flags in the message', hi: 'संदेश में खतरे', ta: 'செய்தியில் சிவப்புக் கொடிகள்' },
-  next: { en: 'What to do next', hi: 'अब क्या करें', ta: 'அடுத்து என்ன செய்ய வேண்டும்' },
+  why: { en: 'Why', hi: 'क्यों', ta: 'ஏன்' },
+  flags: { en: 'Warning signs', hi: 'चेतावनी', ta: 'எச்சரிக்கைகள்' },
+  next: { en: 'What to do', hi: 'अब क्या करें', ta: 'என்ன செய்ய வேண்டும்' },
   listen: { en: 'Listen', hi: 'सुनें', ta: 'கேளுங்கள்' },
   stop: { en: 'Stop', hi: 'रोकें', ta: 'நிறுத்து' },
-  family: { en: 'Family Shield', hi: 'परिवार शील्ड', ta: 'குடும்ப கவசம்' },
+  family: { en: 'Share with family', hi: 'परिवार से शेयर करें', ta: 'குடும்பத்துடன் பகிரவும்' },
   familyHint: {
-    en: 'One tap: a warning you can forward to parents on WhatsApp, in their language.',
-    hi: 'एक टैप: माता-पिता को व्हाट्सऐप पर फॉरवर्ड करने वाला चेतावनी कार्ड।',
-    ta: 'ஒரு தட்டுதல்: பெற்றோருக்கு வாட்ஸ்அப்பில் அனுப்ப ஒரு எச்சரிக்கை.',
+    en: 'Save this check, then share it to your family WhatsApp group.',
+    hi: 'इस जाँच को सेव करें, फिर परिवार के व्हाट्सऐप ग्रुप में भेजें।',
+    ta: 'இந்த சரிபார்ப்பை சேமித்து குடும்ப வாட்ஸ்அப் குழுவில் பகிரவும்.',
   },
-  shareWhatsapp: { en: 'Share on WhatsApp', hi: 'व्हाट्सऐप पर भेजें', ta: 'வாட்ஸ்அப்பில் பகிர்' },
-  copyText: { en: 'Copy text', hi: 'टेक्स्ट कॉपी', ta: 'உரையை நகலெடு' },
-  saveImage: { en: 'Save card', hi: 'कार्ड सेव', ta: 'அட்டையை சேமி' },
+  shareWhatsapp: { en: 'Share to WhatsApp group', hi: 'व्हाट्सऐप ग्रुप में भेजें', ta: 'வாட்ஸ்அப் குழுவில் பகிர்' },
+  copyText: { en: 'Copy', hi: 'कॉपी', ta: 'நகலெடு' },
+  saveImage: { en: 'Save', hi: 'सेव', ta: 'சேமி' },
   engine: { en: 'Hybrid engine', hi: 'हाइब्रिड इंजन', ta: 'கலப்பு இயந்திரம்' },
   engineBody: {
     en: 'Deterministic rules run first (lookalike domains, shorteners, punycode, urgency, OTP, remote apps). The LLM only reasons on top of that — and only sees masked text.',
@@ -96,16 +96,25 @@ const UI: Record<string, Partial<Record<LanguageCode, string>>> = {
     ta: 'விதிகள் மட்டும். AI-க்கு Gemini API விசை சேர்க்கவும்.',
   },
   ocrHint: {
-    en: 'Upload a screenshot of the SMS or chat. Text is read on your device.',
-    hi: 'SMS या चैट का स्क्रीनशॉट अपलोड करें। टेक्स्ट आपके डिवाइस पर पढ़ा जाता है।',
-    ta: 'SMS அல்லது அரட்டையின் ஸ்கிரீன்ஷாட்டை பதிவேற்றவும். உரை உங்கள் சாதனத்திலேயே படிக்கப்படும்.',
+    en: 'Tap to upload a screenshot',
+    hi: 'स्क्रीनशॉट अपलोड करने के लिए टैप करें',
+    ta: 'ஸ்கிரீன்ஷாட்டை பதிவேற்ற தட்டவும்',
   },
   reading: { en: 'Reading screenshot…', hi: 'स्क्रीनशॉट पढ़ा जा रहा है…', ta: 'ஸ்கிரீன்ஷாட்டைப் படிக்கிறது…' },
-  howTitle: { en: 'Built for people who get the first scam SMS.', hi: 'पहला स्कैम SMS पाने वाले लोगों के लिए।', ta: 'முதல் மோசடி SMS வருபவர்களுக்காக.' },
-  impact: {
-    en: 'First-time internet users, parents, and students lose money to fake KYC, digital-arrest calls, and UPI collect requests. Filters fail silently. Scam Shield explains the danger and what to do — before or after a click.',
-    hi: 'नए इंटरनेट उपयोगकर्ता, माता-पिता और छात्र नकली KYC, डिजिटल अरेस्ट और UPI कलेक्ट से पैसे गँवाते हैं। स्कैम शील्ड खतरा और अगला कदम बताता है।',
-    ta: 'புதிய இணையப் பயனர்கள், பெற்றோர், மாணவர்கள் போலி KYC, டிஜிட்டல் அரெஸ்ட், UPI கலெக்ட் மூலம் பணத்தை இழக்கின்றனர். ஸ்காம் ஷீல்டு ஆபத்தையும் அடுத்த அடியையும் விளக்கும்.',
+  how1: {
+    en: '1. Choose Message, Screenshot, Link, or Phone',
+    hi: '1. संदेश, स्क्रीनशॉट, लिंक या फ़ोन चुनें',
+    ta: '1. செய்தி, ஸ்கிரீன்ஷாட், இணைப்பு அல்லது எண்',
+  },
+  how2: {
+    en: '2. Tap Scan',
+    hi: '2. स्कैन दबाएँ',
+    ta: '2. ஸ்கேன் அழுத்தவும்',
+  },
+  how3: {
+    en: '3. Green flag = safe. Red flag = danger. Then share to your WhatsApp group.',
+    hi: '3. हरा = सुरक्षित। लाल = खतरा। फिर व्हाट्सऐप ग्रुप में शेयर करें।',
+    ta: '3. பச்சை = பாதுகாப்பு. சிவப்பு = ஆபத்து. பின் வாட்ஸ்அப் குழுவில் பகிரவும்.',
   },
 }
 
@@ -393,24 +402,28 @@ export function familyShareText(
   lang: LanguageCode,
   verdict: Verdict,
   explanation: string,
+  originalText: string,
+  inputMode?: string,
 ): string {
   const v = verdictLabel(lang, verdict)
+  const kind =
+    inputMode === 'screenshot'
+      ? 'screenshot'
+      : inputMode === 'link'
+        ? 'link'
+        : inputMode === 'phone'
+          ? 'phone number'
+          : 'message'
+  const snippet = originalText.replace(/\s+/g, ' ').trim().slice(0, 280)
   const intros: Partial<Record<LanguageCode, string>> = {
-    en: `Family Shield warning — this looks like: ${v}.`,
-    hi: `परिवार शील्ड चेतावनी — यह ${v} लग रहा है।`,
-    ta: `குடும்ப கவசம் எச்சரிக்கை — இது ${v} போல் உள்ளது.`,
-    te: `ఫ్యామిలీ షీల్డ్ హెచ్చరిక — ఇది ${v}లా ఉంది.`,
-    bn: `ফ্যামিলি শিল্ড সতর্কতা — এটা ${v} মনে হচ্ছে।`,
-    mr: `फॅमिली शील्ड इशारा — हे ${v} वाटते.`,
-    kn: `ಫ್ಯಾಮಿಲಿ ಶೀಲ್ಡ್ ಎಚ್ಚರಿಕೆ — ಇದು ${v} ಎನಿಸುತ್ತದೆ.`,
-    ml: `ഫാമിലി ഷീൽഡ് മുന്നറിയിപ്പ് — ഇത് ${v} ആണെന്ന് തോന്നുന്നു.`,
-    gu: `ફેમિલી શીલ્ડ ચેતવણી — આ ${v} લાગે છે.`,
-    pa: `ਫੈਮਿਲੀ ਸ਼ੀਲਡ ਚੇਤਾਵਨੀ — ਇਹ ${v} ਲੱਗਦਾ ਹੈ।`,
+    en: `Scam Shield check — ${v}\n\nI scanned this ${kind}:\n${snippet}`,
+    hi: `स्कैम शील्ड जाँच — ${v}\n\nमैंने यह ${kind} स्कैन किया:\n${snippet}`,
+    ta: `ஸ்காம் ஷீல்டு சரிபார்ப்பு — ${v}\n\nநான் இந்த ${kind}-ஐ சரிபார்த்தேன்:\n${snippet}`,
   }
   const footers: Partial<Record<LanguageCode, string>> = {
-    en: 'Do not tap links, share OTP, or install AnyDesk. Check on Scam Shield first.',
-    hi: 'लिंक न खोलें, OTP न दें, AnyDesk न लगाएँ। पहले स्कैम शील्ड पर जाँचें।',
-    ta: 'இணைப்பைத் தட்ட வேண்டாம், OTP கொடுக்க வேண்டாம். முதலில் ஸ்காம் ஷீல்டில் சரிபாருங்கள்.',
+    en: 'Sharing this with our family WhatsApp group. Do not tap unknown links or share OTP.',
+    hi: 'यह परिवार के व्हाट्सऐप ग्रुप में शेयर कर रहा/रही हूँ। अनजान लिंक न खोलें, OTP न दें।',
+    ta: 'இதை குடும்ப வாட்ஸ்அப் குழுவில் பகிர்கிறேன். தெரியாத இணைப்பைத் தட்ட வேண்டாம், OTP கொடுக்க வேண்டாம்.',
   }
   return `${intros[lang] ?? intros.en}\n\n${explanation}\n\n${footers[lang] ?? footers.en}`
 }

@@ -6,7 +6,7 @@ interface Props {
   onLang: (code: LanguageCode) => void
   onEmergency: () => void
   onHome: () => void
-  view: 'check' | 'emergency' | 'pitch'
+  view: 'check' | 'emergency'
 }
 
 export function Header({ lang, onLang, onEmergency, onHome, view }: Props) {
@@ -26,7 +26,6 @@ export function Header({ lang, onLang, onEmergency, onHome, view }: Props) {
         </span>
         <span>
           <strong>{t(lang, 'brand')}</strong>
-          <em>Check before you pay</em>
         </span>
       </button>
       <div className="top-actions">

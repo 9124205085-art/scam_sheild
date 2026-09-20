@@ -48,6 +48,7 @@ export interface AnalysisResult {
   usedAi: boolean
   language: LanguageCode
   originalText: string
+  inputMode: InputMode
   aiError?: string
 }
 

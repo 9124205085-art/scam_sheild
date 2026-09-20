@@ -64,9 +64,9 @@ a {
 }
 
 .shell {
-  width: min(1120px, calc(100% - 32px));
+  width: min(720px, calc(100% - 32px));
   margin: 0 auto;
-  padding-bottom: 64px;
+  padding-bottom: 40px;
   position: relative;
 }
 
@@ -157,12 +157,35 @@ a {
   cursor: wait;
 }
 
-.hero-layout {
+.simple-main {
+  padding: 8px 0 32px;
+}
+
+.simple-main h1 {
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  margin-bottom: 12px;
+}
+
+.how {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.how li {
+  margin: 0 0 4px;
+}
+
+.result-simple {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 28px;
-  align-items: start;
-  padding: 12px 0 36px;
+  gap: 16px;
+  padding: 8px 0 32px;
+}
+
+.flag-emoji {
+  font-size: 2.4rem;
+  margin: 0 0 4px;
 }
 
 .eyebrow {

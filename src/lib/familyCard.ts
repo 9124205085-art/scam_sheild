@@ -39,7 +39,7 @@ export function drawFamilyCard(result: AnalysisResult): HTMLCanvasElement {
 
   ctx.fillStyle = '#3ee0c2'
   ctx.font = '700 36px Outfit, sans-serif'
-  ctx.fillText('SCAM SHIELD  ·  FAMILY CARD', 80, 110)
+  ctx.fillText('SCAM SHIELD  ·  SHARE WITH FAMILY', 80, 110)
 
   const colors: Record<string, string> = {
     scam: '#ff6b4a',
@@ -104,11 +104,19 @@ export function cardToBlob(canvas: HTMLCanvasElement): Promise<Blob> {
 }
 
 export function whatsappUrl(result: AnalysisResult): string {
-  return `https://wa.me/?text=${encodeURIComponent(familyShareText(result.language, result.verdict, result.explanation))}`
+  return `https://wa.me/?text=${encodeURIComponent(
+    familyShareText(result.language, result.verdict, result.explanation, result.originalText, result.inputMode),
+  )}`
 }
 
 export async function shareFamily(result: AnalysisResult, canvas: HTMLCanvasElement) {
-  const text = familyShareText(result.language, result.verdict, result.explanation)
+  const text = familyShareText(
+    result.language,
+    result.verdict,
+    result.explanation,
+    result.originalText,
+    result.inputMode,
+  )
   const blob = await cardToBlob(canvas)
   const file = new File([blob], 'scam-shield-family.png', { type: 'image/png' })
   const nav = navigator as Navigator & {

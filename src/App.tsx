@@ -1,20 +1,16 @@
 import { useMemo, useState, type ChangeEvent, type FormEvent } from 'react'
 import { EmergencyMode } from './components/EmergencyMode'
 import { Header } from './components/Header'
-import { Pitch } from './components/Pitch'
 import { ResultPanel } from './components/ResultPanel'
 import { analyzeContent } from './lib/analyze'
-import { hasGeminiKey } from './lib/llm'
 import { readScreenshot } from './lib/ocr'
 import { SAMPLES } from './lib/samples'
 import { t } from './lib/i18n'
 import type { AnalysisResult, InputMode, LanguageCode } from './types'
 
-type View = 'check' | 'emergency' | 'pitch'
-
 export default function App() {
   const [lang, setLang] = useState<LanguageCode>('en')
-  const [view, setView] = useState<View>('check')
+  const [view, setView] = useState<'check' | 'emergency'>('check')
   const [mode, setMode] = useState<InputMode>('message')
   const [text, setText] = useState('')
   const [busy, setBusy] = useState(false)
@@ -35,7 +31,7 @@ export default function App() {
 
   const runScan = async (value: string, scanMode: InputMode) => {
     if (!value.trim()) {
-      setError('Add a message, link, number, or screenshot first.')
+      setError('Add a message, screenshot, link, or phone number first.')
       return
     }
     setBusy(true)
@@ -73,7 +69,6 @@ export default function App() {
 
   return (
     <div className="shell">
-      <div className="glow" aria-hidden="true" />
       <Header
         lang={lang}
         onLang={setLang}
@@ -82,15 +77,11 @@ export default function App() {
           setView('emergency')
           setResult(null)
         }}
-        onHome={() => {
-          setView('check')
-        }}
+        onHome={() => setView('check')}
       />
 
       {view === 'emergency' ? (
         <EmergencyMode lang={lang} />
-      ) : view === 'pitch' ? (
-        <Pitch />
       ) : result ? (
         <ResultPanel
           result={result}
@@ -101,27 +92,13 @@ export default function App() {
           }}
         />
       ) : (
-        <main className="hero-layout">
-          <section className="intro">
-            <p className="eyebrow">Tech for a better tomorrow</p>
-            <h1>{t(lang, 'tagline')}</h1>
-            <p className="lede">{t(lang, 'checkBefore')}</p>
-            <p className="impact">{t(lang, 'impact')}</p>
-            <ul className="pillars">
-              <li>
-                <b>Hybrid engine</b>
-                Rules first, AI second. Score breakdown on every scan.
-              </li>
-              <li>
-                <b>Family Shield</b>
-                Forward a warning card to parents in their language.
-              </li>
-              <li>
-                <b>Emergency hour</b>
-                Already paid? Freeze, rotate keys, report — 1930 in India.
-              </li>
-            </ul>
-          </section>
+        <main className="simple-main">
+          <h1>{t(lang, 'tagline')}</h1>
+          <ol className="how">
+            <li>{t(lang, 'how1')}</li>
+            <li>{t(lang, 'how2')}</li>
+            <li>{t(lang, 'how3')}</li>
+          </ol>
 
           <form className="composer" onSubmit={onSubmit}>
             <div className="tabs" role="tablist">
@@ -149,9 +126,13 @@ export default function App() {
             <textarea
               value={text}
               onChange={(e) => setText(e.target.value)}
-              rows={mode === 'message' || mode === 'screenshot' ? 8 : 3}
+              rows={mode === 'message' || mode === 'screenshot' ? 7 : 3}
               placeholder={
-                mode === 'link' ? t(lang, 'placeholderLink') : mode === 'phone' ? t(lang, 'placeholderPhone') : t(lang, 'placeholderMessage')
+                mode === 'link'
+                  ? t(lang, 'placeholderLink')
+                  : mode === 'phone'
+                    ? t(lang, 'placeholderPhone')
+                    : t(lang, 'placeholderMessage')
               }
             />
 
@@ -178,51 +159,9 @@ export default function App() {
               {busy ? t(lang, 'analyzing') : t(lang, 'analyze')}
             </button>
             <p className="privacy-kicker">{t(lang, 'privacyNote')}</p>
-            {!hasGeminiKey() ? <p className="privacy-kicker dim">{t(lang, 'noAi')}</p> : null}
           </form>
         </main>
       )}
-
-      {view === 'check' && !result ? (
-        <section className="engine-band">
-          <div>
-            <p className="eyebrow">{t(lang, 'engine')}</p>
-            <h2>{t(lang, 'howTitle')}</h2>
-            <p>{t(lang, 'engineBody')}</p>
-          </div>
-          <ol className="flow">
-            <li>
-              <b>01 Mask</b>
-              Phones, OTP, cards, UPI IDs leave the device as placeholders.
-            </li>
-            <li>
-              <b>02 Rules</b>
-              Lookalikes, punycode, shorteners, KYC threats, AnyDesk, collect requests.
-            </li>
-            <li>
-              <b>03 Reason</b>
-              Optional Gemini pass writes the explanation in the user’s language.
-            </li>
-            <li>
-              <b>04 Act</b>
-              Next steps, audio, Family Shield, or the emergency checklist.
-            </li>
-          </ol>
-        </section>
-      ) : null}
-
-      <footer className="foot">
-        <span>HACKDAY 1.0 · Open innovation · No install</span>
-        <span>
-          <a className="text-link" href="./pitch.html" target="_blank" rel="noreferrer">
-            PPT slides
-          </a>
-          {' · '}
-          <button type="button" className="text-link" onClick={() => setView(view === 'pitch' ? 'check' : 'pitch')}>
-            {view === 'pitch' ? 'Back to app' : 'Judge one-pager'}
-          </button>
-        </span>
-      </footer>
     </div>
   )
 }

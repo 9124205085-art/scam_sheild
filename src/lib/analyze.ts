@@ -116,6 +116,7 @@ export async function analyzeContent(
     usedAi,
     language,
     originalText,
+    inputMode: mode,
     aiError,
   }
 }
